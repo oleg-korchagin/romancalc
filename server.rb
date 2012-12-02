@@ -31,5 +31,5 @@ class Server
 end
 
 port = ARGV[0] || 2000
-STDOUT.puts "Starting server on port #{port}"
+STDOUT.puts "Starting server on port #{port} ..."
 Server.new(port).run
