@@ -19,11 +19,11 @@ class Server
   private
 
   def handle_client(c)
+    calc = Calc.new
     while true
-      input = c.gets.chop
+      input = c.gets
       # break if !input
       break if input == 'quit' or input == 'exit'
-      calc = Calc.new
       c.puts calc.calculate(input)
       c.flush
     end
@@ -32,5 +32,7 @@ class Server
 
 end
 
-server = Server.new(2000)
-server.run
+port = ARGV[0]
+port ||= 2000
+STDOUT.puts "Starting server on port #{port}"
+Server.new(port).run

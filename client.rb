@@ -22,6 +22,9 @@ begin
   end
 
   while buf = Readline.readline(">>> ", true)
+    buf.chomp!
+    next if buf == ''
+    break if ['quit', 'exit'].index(buf.downcase)
     s.puts buf
     s.flush
     response = s.readpartial(4096)
