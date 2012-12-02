@@ -105,22 +105,3 @@ class Calc
   end
 
 end
-
-=begin
-c = Calc.new
-# s = "12 + (22 - (010 + XXXVIII)) + (52 + MMCMLXXXIV)"
-while buf = Readline.readline(">>> ", true)
-  res = c.calculate(buf)
-  rom = ""
-  begin
-    rom = "#{Roman.new(res)}"
-  rescue RomanException
-    # pass
-  end
-  if rom != ""
-    puts "#{rom} #{res}"
-  else
-    puts "#{res}"
-  end
-end
-=end
